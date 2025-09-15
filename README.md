@@ -1,1 +1,133 @@
-# classifier-model
+# Animal Classification Model
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Datasets](#datasets)
+- [Setup & Installation](#setup--installation)
+    - [Clone repo](#step-1-clone-the-repository)
+    - [Create Virtual Environment](#step-2-create-virtual-environment)
+    - [Install Dependencies](#step-3-install-dependencies)
+    - [Training the Model](#step-4-training-the-model)
+    - [Testing/Prediction](#step-5-testingprediction)
+- [Contribution](#contribution)
+- [References](#references)
+
+
+## Overview
+
+This project is an **"Animal Classification System"** built using machine learning. It predicts the class of an animal (e.g., Mammal, Bird, Fish, etc.) based on its features. The model is trained on the UCI Zoo dataset and related class information
+
+
+## Datasets
+
+[UCI Zoo Dataset](https://archive.ics.uci.edu/dataset/111/zoo)
+
+[Kaggle Zoo Animal Classification](https://www.kaggle.com/datasets/uciml/zoo-animal-classification/data)
+
+
+The main dataset used is [zoo_animals_data.csv](./zoo_animals_data.csv), which contains features such as:
+- hair, 
+- feathers, 
+- eggs, 
+- milk, 
+- airborne, 
+- aquatic, 
+- predator, 
+- toothed, 
+- backbone, 
+- breathes, 
+- venomous, 
+- fins, 
+- legs, 
+- tail, 
+- domestic, 
+- catsize, 
+- class_type, and 
+- class_name.
+
+
+
+## Project Structure
+
+```bash
+
+classifier_model
+|__ venv/                            # virtual env
+|__ zoo_animal_data.csv              # dataset
+|__ model.py                         # model training file
+|__ zoo_animal_classifier_model.pkl  # saved model in .pkl
+|__ test_model.py                    # to test model
+|__ requirements.txt                 # install dependency pacakges
+|__ README.md    
+|__ LICENCE
+|__ CONTRIBUTION.md                    
+
+```
+
+
+## Libraries and Tools
+
+- **Machine Learning**: scikit-learn
+- **Type of Machine Learning**: Supervised ML
+- **Visual Charts**: matplotlib, seaborn
+- **Save model**: joblib
+
+
+## Model
+
+- **Algorithm**: Logistic Regression (from scikit-learn)
+- **Evaluation**: Accuracy, classification report, confusion matrix
+- **Output**: Predicted animal class
+
+
+
+## Setup & Installation
+
+#### Step-1: Clone the repository
+
+```bash
+git clone https://github.com/mlops-hub/classifier-model.git
+cd classifier-model
+```
+
+#### Step-2: Create Virtual Environment
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+#### Step-3: Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+#### Step-4: Training the Model
+
+Run [`model.py`](./model.py) to train the classifier and save the model:
+
+```bash
+python model.py
+```
+
+
+#### Step-5: Testing/Prediction
+
+Run [`test_model.py`](./test_model.py) to make predictions. If 'animal' is not found, you will be prompted to enter animal features, and the model will predict the class:
+
+```bash
+python test_model.py
+```
+
+The model achieves high accuracy in classifying animals into their respective classes.
+
+
+## Contribution
+
+Please read our [Contributing Guidelines](CONTRIBUTION.md) before submitting pull requests.
+
+
+## License
+This project is under [MIT Licence](LICENCE) support.
