@@ -1,5 +1,15 @@
 # Animal Classification Model
 
+<div align="center">
+  <img src="https://img.shields.io/github/stars/mlops-hub/classifier-model.svg?style=for-the-badge" alt="GitHub Stars" />
+  <img src="https://img.shields.io/github/forks/mlops-hub/classifier-model.svg?style=for-the-badge" alt="GitHub Forks" />
+  <img src="https://img.shields.io/github/contributors/mlops-hub/classifier-model.svg?style=for-the-badge" alt="Contributors" />
+  <img src="https://img.shields.io/github/last-commit/mlops-hub/classifier-model.svg?style=for-the-badge" alt="Last Commit" />
+  <img src="https://img.shields.io/badge/python-3.12.x-blue?style=for-the-badge" alt="Python Version" />
+</div>
+
+<hr />
+
 ## Table of Contents
 
 - [Overview](#overview)
