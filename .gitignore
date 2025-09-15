@@ -1,0 +1,6 @@
+
+venv
+*.ipynb
+class.csv
+zoo_data.csv
+__pycache__/
