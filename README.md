@@ -14,6 +14,7 @@
 
 - [Overview](#overview)
 - [Datasets](#datasets)
+- [MLOps Pipeline](#mlops-pipeline)
 - [Setup & Installation](#setup--installation)
     - [Clone repo](#step-1-clone-the-repository)
     - [Create Virtual Environment](#step-2-create-virtual-environment)
@@ -37,25 +38,33 @@ This project is an **"Animal Classification System"** built using machine learni
 
 
 The main dataset used is [zoo_animals_data.csv](./zoo_animals_data.csv), which contains features such as:
-- hair, 
-- feathers, 
-- eggs, 
-- milk, 
-- airborne, 
-- aquatic, 
-- predator, 
-- toothed, 
-- backbone, 
-- breathes, 
-- venomous, 
-- fins, 
-- legs, 
-- tail, 
-- domestic, 
-- catsize, 
-- class_type, and 
-- class_name.
 
+
+| Feature      | Description           |
+|--------------|-----------------------|
+| hair         | Has hair              |
+| feathers     | Has feathers          |
+| eggs         | Lays eggs             |
+| milk         | Produces milk         |
+| airborne     | Can fly/airborne      |
+| aquatic      | Lives in water        |
+| predator     | Is a predator         |
+| toothed      | Has teeth             |
+| backbone     | Has backbone          |
+| breathes     | Breathes air          |
+| venomous     | Is venomous           |
+| fins         | Has fins              |
+| legs         | Number of legs        |
+| tail         | Has tail              |
+| domestic     | Is domesticated       |
+| catsize      | Cat-sized             |
+| class_type   | Class type (numeric)  |
+| class_name   | Class name (label)    |
+
+
+## MLOps Pipeline
+
+<img src="./assets//classifier-arch-new.jpg" alt="mlops architecture" />
 
 
 ## Project Structure
@@ -66,9 +75,13 @@ classifier_model
 |__ venv/                            # virtual env
 |__ zoo_animal_data.csv              # dataset
 |__ model.py                         # model training file
-|__ zoo_animal_classifier_model.pkl  # saved model in .pkl
+|__ models/
+  |__ classifier_model.pkl           # saved model in .pkl
+  |__ feature_names.pkl              # save feature_names for testing
+  |__ preprocessed_data.csv          # save preprocessed data for testing
 |__ test_model.py                    # to test model
 |__ requirements.txt                 # install dependency pacakges
+|__ assets/                          # miscellenous files for readme.md
 |__ README.md    
 |__ LICENCE
 |__ CONTRIBUTION.md                    
@@ -86,7 +99,7 @@ classifier_model
 
 ## Model
 
-- **Algorithm**: Logistic Regression (from scikit-learn)
+- **Algorithm**: Logistic Regression 
 - **Evaluation**: Accuracy, classification report, confusion matrix
 - **Output**: Predicted animal class
 
