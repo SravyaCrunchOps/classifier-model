@@ -10,7 +10,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 # Step-2: Load `.csv` dataset
-df = pd.read_csv("./zoo_animals_data.csv")
+df = pd.read_csv("./datasets/zoo_animals_data.csv")
 print(df.head(3))
 
 # Step-3: Data Cleaning
@@ -103,4 +103,9 @@ if accuracy < 0.9:
 import joblib
 joblib.dump(model, 'models/classifier_model.pkl')
 joblib.dump(feature_names, 'models/feature_names.pkl')
-joblib.dump(df, 'models/preprocessed_data.csv')
+joblib.dump(df, 'datasets/preprocessed_data.csv')
+
+
+# testing
+
+

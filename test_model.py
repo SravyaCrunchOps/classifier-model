@@ -30,13 +30,12 @@ def create_animal():
 
 
 
-
 def predict_animal(animal_name):
     #  load model
     try:
         model = joblib.load("./models/classifier_model.pkl")
         feature_names = joblib.load("./models/feature_names.pkl")
-        df = joblib.load("./models/preprocessed_data.csv")
+        df = joblib.load("./datasets/preprocessed_data.csv")
         print("✅ model loaded")
     except Exception as e:
         print(e)
@@ -57,15 +56,16 @@ def predict_animal(animal_name):
         input = feature.drop(columns=['animal_name', 'class_type', 'class_name', 'airborne', 'feathers', 'domestic', 'catsize', 'aquatic', 'fins'])
 
     # print(input)
-
     y_result = model.predict(input)[0]
     print(f"\nAnimal Type for {animal_name}: {y_result}\n")
+
 
 
 if __name__ == "__main__":
     while True:
         animal_name = input("Enter animal name: ")
         if animal_name.lower() in ['exit', 'quit']:
+            print("👋🏻 Bye")
             break
         predict_animal(animal_name)
 
