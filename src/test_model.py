@@ -33,9 +33,9 @@ def create_animal():
 def predict_animal(animal_name):
     #  load model
     try:
-        model = joblib.load("./models/classifier_model.pkl")
-        feature_names = joblib.load("./models/feature_names.pkl")
-        df = joblib.load("./datasets/preprocessed_data.csv")
+        model = joblib.load("../models/classifier_model.pkl")
+        feature_names = joblib.load("../models/feature_names.pkl")
+        df = pd.read_csv("../datasets/preprocessed_data.csv")
         print("✅ model loaded")
     except Exception as e:
         print(e)
@@ -45,10 +45,7 @@ def predict_animal(animal_name):
     # print('feature-names: ', feature_names)
 
     if feature.empty:
-        print("""This animal is not found in dataset. To know this animal give me full details such as:
-        features_dict: { 'hair', 'feathers', 'milk', ........, 'domestic', 'catsize'}       
-        """)
-        print('feature-names: ', feature_names)
+        print("This animal is not found in dataset.")
         feature = create_animal()
         input = pd.DataFrame([feature])[feature_names]
 
