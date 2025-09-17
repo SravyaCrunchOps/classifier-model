@@ -81,8 +81,10 @@ classifier_model
 |__ models/
   |__ classifier_model.pkl           # saved model in .pkl
   |__ feature_names.pkl              # save feature_names for testing
-|__ model.py                         # model training file
-|__ test_model.py                    # to test model
+|__ src/
+  |__ model.py                       # model training file
+  |__ test_model.py                  # to test model
+|__ logs/*                           # logs for hyperparamter tuning values
 |__ requirements.txt                 # install dependency pacakges
 |__ README.md    
 |__ LICENCE
