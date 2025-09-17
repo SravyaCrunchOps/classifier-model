@@ -4,11 +4,12 @@
   <img src="https://img.shields.io/github/stars/mlops-hub/classifier-model.svg?style=for-the-badge" alt="GitHub Stars" />
   <img src="https://img.shields.io/github/forks/mlops-hub/classifier-model.svg?style=for-the-badge" alt="GitHub Forks" />
   <img src="https://img.shields.io/github/contributors/mlops-hub/classifier-model.svg?style=for-the-badge" alt="Contributors" />
-  <img src="https://img.shields.io/github/last-commit/mlops-hub/classifier-model.svg?style=for-the-badge" alt="Last Commit" />
+  <img src="https://img.shields.io/github/last-commit/mlops-hub/classifier-model/main.svg?style=for-the-badge" alt="Last Commit" />
   <img src="https://img.shields.io/badge/python-3.12.x-blue?style=for-the-badge" alt="Python Version" />
 </div>
 
 <hr />
+
 
 ## Table of Contents
 
@@ -73,15 +74,16 @@ The main dataset used is [zoo_animals_data.csv](./zoo_animals_data.csv), which c
 
 classifier_model
 |__ venv/                            # virtual env
-|__ zoo_animal_data.csv              # dataset
-|__ model.py                         # model training file
+|__ assets/*                         # miscellenous files for readme.md
+|__ datasets/
+  |__ preprocessed_data.csv          # save preprocessed data for testing
+  |__ zoo_animal_data.csv            # original dataset
 |__ models/
   |__ classifier_model.pkl           # saved model in .pkl
   |__ feature_names.pkl              # save feature_names for testing
-  |__ preprocessed_data.csv          # save preprocessed data for testing
+|__ model.py                         # model training file
 |__ test_model.py                    # to test model
 |__ requirements.txt                 # install dependency pacakges
-|__ assets/                          # miscellenous files for readme.md
 |__ README.md    
 |__ LICENCE
 |__ CONTRIBUTION.md                    
