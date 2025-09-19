@@ -73,7 +73,6 @@ The main dataset used is [zoo_animals_data.csv](./zoo_animals_data.csv), which c
 ```bash
 
 classifier_model
-|__ venv/                            # virtual env
 |__ assets/*                         # miscellenous files for readme.md
 |__ datasets/
   |__ preprocessed_data.csv          # save preprocessed data for testing
@@ -120,11 +119,17 @@ cd classifier-model
 
 #### Step-2: Create Virtual Environment
 
+##### Windows
+
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
-
+##### Mac and Linux
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 #### Step-3: Install Dependencies
 
 ```bash
@@ -136,9 +141,10 @@ pip install -r requirements.txt
 Run [`model.py`](./model.py) to train the classifier and save the model:
 
 ```bash
+cd src
+
 python model.py
 ```
-
 
 #### Step-5: Testing/Prediction
 
