@@ -15,7 +15,7 @@
 
 - [Overview](#overview)
 - [Datasets](#datasets)
-- [MLOps Pipeline](#mlops-pipeline)
+- [Model Workflow](#model-workflow)
 - [Setup & Installation](#setup--installation)
     - [Clone repo](#step-1-clone-the-repository)
     - [Create Virtual Environment](#step-2-create-virtual-environment)
@@ -63,9 +63,9 @@ The main dataset used is [zoo_animals_data.csv](./zoo_animals_data.csv), which c
 | class_name   | Class name (label)    |
 
 
-## MLOps Pipeline
+## Model Workflow
 
-<img src="./assets//classifier-arch-new.jpg" alt="mlops architecture" />
+<img src="./assets//classifier-arch-new.jpg" alt="model workflow" />
 
 
 ## Project Structure
