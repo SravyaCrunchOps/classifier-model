@@ -1,6 +1,6 @@
-
+.env
 venv
 *.ipynb
-class.csv
-zoo_data.csv
 __pycache__/
+*/__pycache__/
+model.py

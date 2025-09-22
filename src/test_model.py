@@ -2,6 +2,10 @@ import joblib
 import pandas as pd
 
 
+MODEL_PATH = '../models/classifier_model.pkl'
+FEATURE_PATH = '../feature_store/feature_names.pkl'
+PREPROCESSED_DATASET = '../feature_store/preprocessed_data.csv'
+
 # Get the features for prediction
 def create_animal():
     print("Enter features here: ")
@@ -33,16 +37,16 @@ def create_animal():
 def predict_animal(animal_name):
     #  load model
     try:
-        model = joblib.load("../models/classifier_model.pkl")
-        feature_names = joblib.load("../models/feature_names.pkl")
-        df = pd.read_csv("../datasets/preprocessed_data.csv")
+        model = joblib.load(MODEL_PATH)
+        feature_names = joblib.load(FEATURE_PATH)
+        df = pd.read_csv(PREPROCESSED_DATASET)
         print("✅ model loaded")
     except Exception as e:
         print(e)
 
     # load dataset to get animal_name features
     feature = df[df['animal_name'] == animal_name]
-    # print('feature-names: ', feature_names)
+    print(feature_names)
 
     if feature.empty:
         print("This animal is not found in dataset.")
