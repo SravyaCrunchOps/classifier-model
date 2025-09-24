@@ -124,11 +124,17 @@ cd classifier-model
 
 #### Step-2: Create Virtual Environment
 
+##### Windows
+
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
-
+##### Mac and Linux
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 #### Step-3: Install Dependencies
 
 ```bash
@@ -154,7 +160,6 @@ index.py -> data_pipeline.py     ->  model_pipeline.py
               |__ feature_engg         |__ model_tuning
               |__ data_preprocess
 
-```
 
 #### Step-5: Testing/Prediction
 
