@@ -15,7 +15,7 @@
 
 - [Overview](#overview)
 - [Datasets](#datasets)
-- [Model Workflow](#model-workflow)
+- [Project Structure](#project-structure)
 - [Setup & Installation](#setup--installation)
     - [Clone repo](#step-1-clone-the-repository)
     - [Create Virtual Environment](#step-2-create-virtual-environment)
@@ -37,8 +37,9 @@ This project is an **"Animal Classification System"** built using machine learni
 
 [Kaggle Zoo Animal Classification](https://www.kaggle.com/datasets/uciml/zoo-animal-classification/data)
 
+From kaggle's zoo dataset, I have added some missing values to practice EDA and cleaning data.
 
-The main dataset used is [zoo_animals_data.csv](./zoo_animals_data.csv), which contains features such as:
+The main dataset used is [zoo.csv](./datasets/raw/zoo.csv) which contains features such as:
 
 
 | Feature      | Description           |
@@ -63,11 +64,6 @@ The main dataset used is [zoo_animals_data.csv](./zoo_animals_data.csv), which c
 | class_name   | Class name (label)    |
 
 
-## Model Workflow
-
-<img src="./assets//classifier-arch-new.jpg" alt="model workflow" />
-
-
 ## Project Structure
 
 ```bash
@@ -75,24 +71,25 @@ The main dataset used is [zoo_animals_data.csv](./zoo_animals_data.csv), which c
 classifier_model
 |__ venv/                              # virtual env
 |__ datasets/
-    |__ zoo_data.csv                   # original zoo dataset
-    |__ class.csv                      # original class name dataset
-    |__ final_dataset.csv              # final dataset for model
+    |__ raw/                           # original datasets
+        |__ zoo_data.csv               
+        |__ class.csv                  
+    |__ */                             # datasets created when you run code
 |__ feature_store/
-    |__ preprocessed_data.csv          # save preprocessed data for testing
     |__ feature_names.pkl              # save feature_names for testing
-|__ models/
-    |__ classifier_model.pkl           # saved model in .pkl
+|__ utility/
+    |__ scaler.pkl                     # save scaler function for testing
+|__ models/                            # save models here in .pkl
+    |__ base_model.pkl 
+    |__ best_model.pkl                
 |__ logs/*                             # logs for hyperparamter tuning values
 |__ src/
-  |__ index.py                         # main file to run
   |__ data_piepline/                   # data_pipeline folder
-      |__ data_*.py
-      |__ index.py
+      |__ *.py
   |__ model_pipeline/                  # model_pipeline folder
-      |__ mdoel_*.py
-      |__ index.py
-  |__ test_model.py                    # to test model
+      |__ *.py
+  |__ predict/                         # to test model
+    |__ inference_test.py
 |__ requirements.txt                   # install dependency pacakges
 |__ README.md     
                  
