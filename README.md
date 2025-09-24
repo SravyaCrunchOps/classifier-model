@@ -67,7 +67,6 @@ The main dataset used is [zoo.csv](./datasets/raw/zoo.csv) which contains featur
 ## Project Structure
 
 ```bash
-
 classifier_model
 |__ venv/                              # virtual env
 |__ datasets/
@@ -112,7 +111,6 @@ classifier_model
 - **Output**: Predicted animal class
 
 
-
 ## Setup & Installation
 
 #### Step-1: Clone the repository
@@ -141,36 +139,53 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### Step-4: Run the Model
-
-Run [`index.py`](./src/index.py) to load data, preprocess data, train and save the model.
-
-```bash
-cd src
-python index.py
-```
+#### Step-4: Run the Model Workflow step-by-step
 
 **Flow of Code Run**
 
 ```bash
-index.py -> data_pipeline.py     ->  model_pipeline.py
-              |__ data_ingestion       |__ model_train
-              |__ data_validation      |__ model_evaluation
-              |__ data_eda             |__ model_validation
-              |__ feature_engg         |__ model_tuning
-              |__ data_preprocess
+src/ -> data_pipeline.py   ->  model_pipeline.py
+        |__ ingestion           |__ train
+        |__ validation          |__ evaluation
+        |__ eda                 |__ validation
+        |__ cleaning            |__ tuning
+        |__ feature_engg         
+        |__ preprocessing
 
+```
+
+- **Data Pipeline**:
+Run each file step-by-step to load data, preprocess data, train and save the model.
+
+```bash
+cd src/data-pipeline
+python 01-ingestion.py
+python 02-validation.py
+python 03-eda.py
+python 04-cleaning.py
+python 05-feature_engg.py
+python 06-reprocessing.py
+```
+
+- **Model Pipleine**
+Once preprocessed dataset is saved, run each model pipeline step-by-step.
+
+```bash
+cd src/model-pipeline
+python 01-training.py
+python 02-evaluation.py
+python 03-validation.py
+python 04-tuning.py
+```
 
 #### Step-5: Testing/Prediction
 
-Run [`test_model.py`](./src/test_model.py) to make predictions. If 'animal' is not found, you will be prompted to enter animal features, and the model will predict the class:
+Run [`inference_test.py`](./src/predict/inference_test.py) to make predictions. If 'animal' is not found, you will be prompted to enter animal features, and the model will predict the class.
 
 ```bash
-cd src
-python test_model.py
+cd src/predict
+python inference_test.py
 ```
-
-The model achieves high accuracy in classifying animals into their respective classes.
 
 
 ## Contribution

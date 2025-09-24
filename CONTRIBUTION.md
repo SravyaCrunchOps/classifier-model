@@ -30,5 +30,5 @@ Write clear commit messages and maintain a clean commit history.
 If you have any further questions or need clarification regarding contributing, feel free to contact the project maintainers by opening an issue.
 
 
-Thank you for contributing to **MLOPS-HUB**!
+Thank you for contributing to **MLOPS-HUB** 2025!
 
