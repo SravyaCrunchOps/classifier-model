@@ -97,6 +97,7 @@ classifier_model
 
 ## Libraries and Tools
 
+- **Python version**: 13.12+ (this project, it was 13.12.10)
 - **Machine Learning**: scikit-learn
 - **Type of Machine Learning**: Supervised ML
 - **Visual Charts**: matplotlib, seaborn
@@ -164,7 +165,7 @@ python 02-validation.py
 python 03-eda.py
 python 04-cleaning.py
 python 05-feature_engg.py
-python 06-reprocessing.py
+python 06-preprocessing.py
 ```
 
 - **Model Pipleine**

@@ -1,12 +1,10 @@
 import joblib
 import pandas as pd
 
-
 MODEL_PATH = '../../models/best_model.pkl'
 FEATURE_PATH = '../../feature_store/feature_names.pkl'
 SCALER = "../../utility/scaler.pkl"
 PREPROCESSED_DATASET = '../../datasets/preprocess/preprocessing_df.csv'
-
 
 # Get the features for prediction
 def create_animal(animal_name):
@@ -14,7 +12,7 @@ def create_animal(animal_name):
     get_hair = input("hair(0 or 1): ")
     get_eggs = input("eggs(0 or 1): ")
     get_milk = input("milk(0 or 1): ")
-    get_predator = input("predator(0 or 1: ")
+    get_predator = input("predator(0 or 1): ")
     get_toothed = input("toothed(0 or 1): ")
     get_backbone = input("backbone(0 or 1): ")
     get_breathes = input("breathes(0 or 1): ")
@@ -33,7 +31,6 @@ def create_animal(animal_name):
     }
     # print(features_dict)
     return features_dict
-
 
 
 def predict_animal(animal_name):
@@ -55,13 +52,16 @@ def predict_animal(animal_name):
         feature = create_animal(animal_name)
         feature_df = pd.DataFrame([feature])[feature_names]
         scaled_feature = scaler.transform(feature_df.drop(columns=['animal_name']))
-        input = scaled_feature
+        input_features = pd.DataFrame(
+            scaled_feature, 
+            columns=[f for f in feature_names if f != "animal_name"]
+        )
 
     else: 
-        input = feature.drop(columns=['animal_name'])
+        input_features = feature.drop(columns=['animal_name'])
 
-    y_result = model.predict(input)[0]
-    print(f"\nAnimal Type for {animal_name}: {y_result}\n")
+    y_result = model.predict(input_features)[0]
+    print(f"\n🐵 Animal Type for {animal_name}: {y_result}\n")
 
 
 if __name__ == "__main__":

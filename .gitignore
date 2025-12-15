@@ -5,3 +5,14 @@ __pycache__/
 */__pycache__/
 model.py
 tuning_evaluation.py
+
+# Ignore everything under datasets/ except the raw/ folder
+/datasets/*
+!/datasets/raw/
+!/datasets/raw/**
+
+logs/
+utility/
+models/
+
+feature_store/
